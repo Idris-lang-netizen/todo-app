@@ -1,0 +1,306 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: inherit;
+    font-family: "Josefin Sans", sans-serif;
+
+}
+
+
+main {
+    background-image: url(../images/bg-mobile-light.jpg);
+    height: 120vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-color: hsl(0, 0%, 98%);
+
+
+    #todo-container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    header {
+
+        margin-top: 3em;
+        margin-bottom: 2em;
+        display: flex;
+
+        h1 {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            font-weight: 400;
+            color: #ffffff;
+            flex: 1;
+
+        }
+
+        button {
+            background: none;
+            border: none;
+        }
+
+
+    }
+
+    // header closed
+
+    #newtask-container {
+
+        position: relative;
+        //box-shadow: 0px 0px 15px 1px hsl(236, 9%, 61%);
+
+
+        input#btn-newtodo {
+            width: 100%;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            padding: 20px;
+            padding-left: 50px;
+            outline: none;
+            margin-bottom: 1em;
+            font-size: 1rem;
+        }
+
+        input#btn-newtodo:focus {
+            outline: auto;
+        }
+
+        input#btn-addnewtask {
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 1px solid hsl(280, 87%, 65%);
+            background: none;
+
+            //background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+        }
+
+
+
+    }
+
+    // end newtask container
+
+
+
+    #tasks-container {
+        border-radius: 5px;
+        position: relative;
+        ul#tasks {
+
+            li {
+                height: 65px;
+                font-size: 1rem;
+
+                #all {
+                    color: hsl(220, 98%, 61%);
+                }
+
+                div#taskwrapper, div#info {
+                    padding: 25px 20px;
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                div#inner-info{
+                    position: absolute;
+                    bottom: -90px;
+                    left: 0;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 5px;
+                    background-color: #ffffff;
+    
+                }
+                div#taskwrapper {
+                    position: relative;
+
+                }
+
+                div#taskwrapper p {
+                    flex: 1;
+                    margin-left: 10px;
+                }
+
+                p:hover {
+                    cursor: pointer;
+                }
+
+                input {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    border: 1px solid hsl(280, 87%, 65%);
+                    background: none;
+                    cursor: pointer;
+                    //background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%))
+                }
+
+                button {
+                    width: 30px;
+                    height: 30px;
+                    background: none;
+                    border: none;
+
+
+                    #img-delete {
+                        display: block;
+                        width: 13px;
+                        height: 13px;
+                        cursor: pointer;
+                    }
+                }
+
+
+                .btn-taskcomplete {
+                    position: absolute;
+                    left: 23px;
+                    top: 28px;
+                    width: 10px;
+                }
+
+
+            }
+
+
+        }
+
+        #tasks-info1 {
+            display: flex;
+            padding: 25px;
+            justify-content: space-between;
+
+            p {
+                color: hsl(236, 9%, 61%);
+                font-size: 0.87rem;
+            }
+
+
+
+
+        }
+
+    }
+
+    #tasks-info2 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        justify-content: space-around;
+        padding: 15px;
+        border-radius: 5px;
+
+
+        li {
+            padding-right: 50px;
+        }
+
+    }
+
+    #drag-and-drop {
+        margin-top: 8em;
+        color: hsl(236, 9%, 61%);
+        text-align: center;
+    }
+
+}
+
+
+
+
+// ruleset for a larger screen
+@media(min-width: 23.5em) {
+
+
+    main {
+
+        #tasks-container {
+            ul#tasks {
+                li {
+                    div#info {
+                        padding: 7px 20px;
+                        div#inner-info {
+                            position: static;
+                            width: 200px;
+                            margin: 0;
+                            box-shadow: none !important;
+
+
+                        }
+
+                        span {
+                            align-items: center;
+                            line-height: 3em;
+                        }
+
+                        span:hover {
+                            cursor: pointer;
+                        }
+                        
+                    }
+                }
+
+            }
+        }
+
+        #todo-container {
+            width: 550px;
+        }
+
+        header {
+            ul {
+                margin-top: 4.5em;
+                margin-bottom: 2em;
+            }
+
+
+            h1 {
+                font-weight: 700;
+
+            }
+
+
+
+        }
+
+
+
+
+        #newtask-container {
+
+            input#btn-newtodo {
+                height: 50px;
+
+            }
+        }
+
+
+        #tasks-info1 {
+
+            li:first-of-type {
+                margin-right: 80px;
+
+            }
+
+            li:last-of-type {
+                margin-left: 50px;
+
+            }
+        }
+    }
+
+}
